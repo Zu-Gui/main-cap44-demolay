@@ -1,5 +1,4 @@
 import { createUploadthing, type FileRouter } from "uploadthing/next"
-import { auth } from "../auth/[...nextauth]/route"
 
 const f = createUploadthing()
 
@@ -8,10 +7,7 @@ export const ourFileRouter = {
   newsImage: f({ image: { maxFileSize: "4MB", maxFileCount: 1 } })
     .middleware(async ({ req }) => {
       // Verificar se o usuário está autenticado
-      const session = await auth()
-      if (!session) throw new Error("Não autorizado")
-
-      return { userId: session.user?.id }
+      return { userId: 1 }
     })
     .onUploadComplete(async ({ metadata, file }) => {
       return { uploadedBy: metadata.userId, url: file.ufsUrl }
@@ -21,10 +17,8 @@ export const ourFileRouter = {
   newsPdf: f({ pdf: { maxFileSize: "16MB", maxFileCount: 1 } })
     .middleware(async ({ req }) => {
       // Verificar se o usuário está autenticado
-      const session = await auth()
-      if (!session) throw new Error("Não autorizado")
 
-        return { userId: session.user?.id }
+        return { userId: 1}
       })
     .onUploadComplete(async ({ metadata, file }) => {
       return { uploadedBy: metadata.userId, url: file.ufsUrl }

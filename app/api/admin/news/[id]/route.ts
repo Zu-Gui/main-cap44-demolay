@@ -1,15 +1,11 @@
 import { NextResponse } from "next/server"
-import { getServerSession } from "next-auth/next"
-import { authOptions } from "../../../auth/[...nextauth]/route"
 import prisma from "@/lib/prisma"
+import { auth } from "@/app/api/auth/middleware"
 
 export async function DELETE(request: Request, { params }: { params: { id: string } }) {
   try {
     // Verificar autenticação
-    const session = await getServerSession(authOptions)
-    if (!session) {
-      return NextResponse.json({ success: false, message: "Não autorizado" }, { status: 401 })
-    }
+    auth(request)
 
     const id = params.id
 

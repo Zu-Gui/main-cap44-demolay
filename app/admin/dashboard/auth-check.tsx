@@ -1,34 +1,28 @@
 "use client"
-
 import type React from "react"
 
-import { useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
+import { useAuth } from "@/lib/auth"
 
 export function AuthCheck({ children }: { children: React.ReactNode }) {
-  const { data: session, status } = useSession()
-  console.log(status, session)
+
+  const { user } = useAuth()
+
   const router = useRouter()
 
   useEffect(() => {
-    if (status === "unauthenticated") {
+    if (!user) {
       router.push("/admin/login")
     }
-  }, [status, router])
+  }, [user, router])
 
-  if (status === "loading") {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
-      </div>
-    )
+  if (!user) {
+    return null
   }
 
-  if (status === "authenticated") {
-    return <>{children}</>
-  }
+  return <>{children}</>
 
-  return null
+
 }
 

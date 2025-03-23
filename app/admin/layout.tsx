@@ -1,14 +1,14 @@
 "use client"
 
+import { AuthProvider } from "@/lib/auth"
 import type React from "react"
 
-import { SessionProvider } from "next-auth/react"
 
 export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return <SessionProvider >{children}</SessionProvider>
+  return <AuthProvider>{children}</AuthProvider>
 }
 

@@ -1,47 +1,54 @@
 import { NextResponse } from "next/server"
-import { getServerSession } from "next-auth/next"
-import { authOptions } from "../../auth/[...nextauth]/route"
 import prisma from "@/lib/prisma"
 
+import { UTApi } from "uploadthing/server"
+import { auth } from "../../auth/middleware"
+
+
 export async function POST(request: Request) {
+
   try {
-    // Verificar autenticação
-    const session = await getServerSession(authOptions)
-    if (!session) {
-      return NextResponse.json({ success: false, message: "Não autorizado" }, { status: 401 })
-    }
+  
+  auth(request)
 
-    const { title, url, imageUrl, pdfUrl } = await request.json()
+  const formData = await request.formData()
+  
 
-    // Validar os dados
-    if (!title || !imageUrl || !pdfUrl) {
-      return NextResponse.json({ success: false, message: "Título, imagem e PDF são obrigatórios" }, { status: 400 })
-    }
+  const title = formData.get("title") as string
+  const preview = formData.get("preview") as File
+  const pdfFile = formData.get("pdf") as File
 
-    // Criar uma nova notícia no banco de dados
-    const newNews = await prisma.newspaper.create({
-      data: {
-        title,
-        url: url || null, // URL é opcional
-        imageUrl,
-        pdfUrl,
-      },
-    })
+  const api  = new UTApi()
 
-    return NextResponse.json({ success: true, news: newNews })
-  } catch (error) {
-    console.error("Erro ao criar notícia:", error)
-    return NextResponse.json({ success: false, message: "Erro interno do servidor" }, { status: 500 })
+  const [previewResult, pdfResult] = await api.uploadFiles([preview, pdfFile])
+
+  const previewUrl = previewResult.data?.ufsUrl
+  const pdfUrl = pdfResult.data?.ufsUrl
+
+  if (!previewUrl || !pdfUrl) {
+    return NextResponse.json({ success: false, message: "Erro ao enviar os arquivos" }, { status: 500 })
+  }
+
+
+  await prisma.newspaper.create({
+    data: {
+      title,
+      imageUrl: previewUrl,
+      pdfUrl
+    }})
+  
+  return NextResponse.json({ success: true })
+  }
+  catch (error) {
+    console.error("Erro ao enviar os arquivos:", error)
+    return NextResponse.json({ success: false, message: "Erro ao enviar os arquivos" }, { status: 500 })
   }
 }
 
 export async function GET() {
   try {
     // Verificar autenticação
-    const session = await getServerSession(authOptions)
-    if (!session) {
-      return NextResponse.json({ success: false, message: "Não autorizado" }, { status: 401 })
-    }
+
 
     // Buscar todas as notícias
     const news = await prisma.newspaper.findMany({

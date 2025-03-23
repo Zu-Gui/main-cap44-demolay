@@ -10,7 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Label } from "@/components/ui/label"
 import { AlertCircle } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { signIn } from "@/lib/auth"
+import { useAuth } from "@/lib/auth"
 
 export default function AdminLoginPage() {
   const [username, setUsername] = useState("")
@@ -19,16 +19,20 @@ export default function AdminLoginPage() {
   const [loading, setLoading] = useState(false)
   const router = useRouter()
 
+  const { login } = useAuth()
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
     setError("")
 
+
     try {
-  await signIn("credentials", Object.entries({username, password}))
+
+      await login(username, password)
 
       router.push("/admin/dashboard")
-        router.refresh()
+      router.refresh()
     } catch (err) {
       setError("Erro ao fazer login. Tente novamente.")
     } finally {

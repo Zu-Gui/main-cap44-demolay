@@ -1,7 +1,7 @@
 import { AddNewsForm } from "./add-news-form"
 import { NewsList } from "./news-list"
-import { AuthCheck } from "./auth-check"
 import { AdminHeader } from "./admin-header"
+import { AuthCheck } from "./auth-check"
 
 export default function AdminDashboardPage() {
   return (
@@ -18,7 +18,9 @@ export default function AdminDashboardPage() {
           </div>
         </div>
       </div>
+
     </AuthCheck>
+
   )
 }
 

@@ -73,6 +73,15 @@ export default function Header() {
                   Cursinho DeMolay
                 </Link>
               </li>
+              <li className="mb-2 md:mb-0">
+                <Link
+                  href="/noticias"
+                  className={`px-3 py-2 rounded-full hover:bg-blue-800 transition duration-300 block ${path === "/noticias" ? "bg-white text-blue-900 font-bold" : ""}`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Notícias
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
