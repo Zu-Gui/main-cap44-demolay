@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <head>
-        <link rel="icon" href="/placeholder.svg?height=32&width=32" />
+        <link rel="icon" href="/img/logo.png" />
       </head>
       <body className={inter.className}>
         <Header />
