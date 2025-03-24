@@ -17,7 +17,7 @@ export default function Footer() {
               >
                 Ordem DeMolay Brasil
               </Link>{" "}
-              Capítulo Juventude de Catanduva n.º 44
+              Capítulo Juventude de Catanduva n.º44
             </p>
           </div>
           <div className="flex items-center space-x-4">
