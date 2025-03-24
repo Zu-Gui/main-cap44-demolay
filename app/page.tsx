@@ -79,7 +79,7 @@ export default function Home() {
                 gratuita para vestibulares a alunos da rede pública de ensino.
               </p>
               <Link
-                href="https://www.demolaybrasil.org.br/"
+                href="https://www.demolaybrasil.org.br/institucional/Historia-da-Organizacao"
                 className="bg-blue-900 text-white hover:bg-blue-800 font-bold py-2 px-6 rounded-full transition duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
