@@ -209,3 +209,4 @@ function NewsPagination({ currentPage, totalPages }: { currentPage: number; tota
   )
 }
 
+/*Meus agradecimentos ao izumi que me ajudou a desenvolver o site.*/
