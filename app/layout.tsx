@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Capítulo Juventude de Catanduva Nº44",
   description: "Site oficial do Capítulo Juventude de Catanduva Nº44 da Ordem DeMolay",
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({

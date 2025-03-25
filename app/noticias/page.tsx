@@ -1,7 +1,6 @@
 import prisma from "@/lib/prisma"
 import { FileText, ExternalLink, ChevronLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 import {
   Pagination,
   PaginationContent,
@@ -11,10 +10,12 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
+import Image from "next/image"
+import Link from "next/link"
 
 export const metadata = {
-  title: "Notícias - Cursinho Demolay",
-  description: "Confira as últimas notícias do Cursinho Demolay",
+  title: "Notícias - Jornal DeMolay",
+  description: "Confira as últimas notícias do Jornal DeMolay",
 }
 
 export default async function NoticiasPage({
@@ -22,7 +23,9 @@ export default async function NoticiasPage({
 }: {
   searchParams: { page?: string }
 }) {
-  const currentPage = Number(searchParams.page) || 1
+  // Ensure searchParams is awaited before accessing its properties
+  const params = await searchParams
+  const currentPage = Number(params.page) || 1
   const pageSize = 9
   const skip = (currentPage - 1) * pageSize
 
@@ -40,68 +43,95 @@ export default async function NoticiasPage({
   const totalPages = Math.ceil(totalCount / pageSize)
 
   return (
-    <main className="container mx-auto px-4 py-12">
-      <div className="mb-8">
-        <Button asChild variant="ghost" className="mb-4">
-          <Link href="/">
-            <ChevronLeft className="h-4 w-4 mr-2" />
-            Voltar para a página inicial
-          </Link>
-        </Button>
-        <h1 className="text-4xl font-bold">Notícias</h1>
-        <p className="text-muted-foreground mt-2">Confira as últimas notícias e atualizações do Cursinho Demolay</p>
-      </div>
-
-      {news.length === 0 ? (
-        <div className="text-center py-12">
-          <p className="text-muted-foreground">Nenhuma notícia disponível no momento.</p>
+    <>
+      {/* Hero section - outside main container to connect with header */}
+      <section className="bg-blue-900 text-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center">
+            <div className="md:w-1/2 mb-8 md:mb-0">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">Capítulo Juventude de Catanduva - Nº44</h1>
+              <p className="mb-4 text-lg">Bem vindo ao Jornal DeMolay!</p>
+              <div>
+                <Link
+                  href="/"
+                  className="bg-white text-blue-900 hover:bg-blue-100 font-bold py-2 px-6 rounded-full transition duration-300 flex items-center"
+                >
+                  <ChevronLeft className="h-4 w-4 mr-2" />
+                  Voltar para a página inicial
+                </Link>
+              </div>
+            </div>
+            <div className="md:w-1/2 flex justify-center">
+              <Image
+                src="/img/Logo-Jornal.png"
+                alt="Logo do Jornal DeMolay"
+                width={450}
+                height={450}
+                className="max-w-full h-auto"
+                priority
+              />
+            </div>
+          </div>
         </div>
-      ) : (
-        <>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {news.map((item) => (
-              <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-                <div className="relative h-48">
-                  <img
-                    src={item.imageUrl || "/placeholder.svg"}
-                    alt={item.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                    <p className="text-white text-xs">{new Date(item.createdAt).toLocaleDateString("pt-BR")}</p>
-                  </div>
-                </div>
-                <div className="p-4 flex-1 flex flex-col">
-                  <h2 className="font-bold text-lg mb-2">{item.title}</h2>
-                  <div className="mt-auto pt-4 flex gap-2">
-                    <Button asChild variant="default" size="sm" className="flex-1">
-                      <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer">
-                        <FileText className="h-4 w-4 mr-2" />
-                        Ver PDF
-                      </a>
-                    </Button>
+      </section>
 
-                    {item.url && (
-                      <Button asChild variant="outline" size="sm">
-                        <a href={item.url} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4" />
+      <main className="container mx-auto px-4 py-16 bg-white">
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold">Notícias</h1>
+          <p className="text-muted-foreground mt-2">Confira as últimas notícias e atualizações do Jornal DeMolay</p>
+        </div>
+
+        {news.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground">Nenhuma notícia disponível no momento.</p>
+          </div>
+        ) : (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {news.map((item) => (
+                <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                  <div className="relative h-48">
+                    <img
+                      src={item.imageUrl || "/placeholder.svg"}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                      <p className="text-white text-xs">{new Date(item.createdAt).toLocaleDateString("pt-BR")}</p>
+                    </div>
+                  </div>
+                  <div className="p-4 flex-1 flex flex-col">
+                    <h2 className="font-bold text-lg mb-2">{item.title}</h2>
+                    <div className="mt-auto pt-4 flex gap-2">
+                      <Button asChild variant="default" size="sm" className="flex-1">
+                        <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer">
+                          <FileText className="h-4 w-4 mr-2" />
+                          Ver PDF
                         </a>
                       </Button>
-                    )}
+
+                      {item.url && (
+                        <Button asChild variant="outline" size="sm">
+                          <a href={item.url} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="h-4 w-4" />
+                          </a>
+                        </Button>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-
-          {totalPages > 1 && (
-            <div className="mt-12 flex justify-center">
-              <NewsPagination currentPage={currentPage} totalPages={totalPages} />
+              ))}
             </div>
-          )}
-        </>
-      )}
-    </main>
+
+            {totalPages > 1 && (
+              <div className="mt-12 flex justify-center">
+                <NewsPagination currentPage={currentPage} totalPages={totalPages} />
+              </div>
+            )}
+          </>
+        )}
+      </main>
+    </>
   )
 }
 
