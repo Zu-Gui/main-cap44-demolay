@@ -167,6 +167,26 @@ function NewsPagination({ currentPage, totalPages }: { currentPage: number; tota
       pages.push(totalPages)
     }
 
+ /*Meus agradecimentos ao amigo e irmão Kevny (Izumi) que me ajudou a desenvolver o site.
+  
+    \  |  /
+    \ | /
+     \|/
+ ---- ☀ ----
+     /|\
+    / | \
+   /  |  \
+
+(o_o)               (o_o)
+/( )\               /( )\
+_/ \_               _/ \_
+--"     "--         --"     "--
+/           \       /           \
+/             \     /             \
+
+
+*/
+
     return pages
   }
 
@@ -209,4 +229,3 @@ function NewsPagination({ currentPage, totalPages }: { currentPage: number; tota
   )
 }
 
-/*Meus agradecimentos ao izumi que me ajudou a desenvolver o site.*/
