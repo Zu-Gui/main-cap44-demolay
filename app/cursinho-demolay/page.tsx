@@ -103,14 +103,9 @@ export default function CursinhoDeMolay() {
               <p className="mt-6">Preencha seus dados corretamente clicando em "Realizar inscrição".</p>
             </div>
             <div className="flex justify-center mt-8">
-              <Link
-                href="https://forms.gle/Sjt9uiXio1ACDX319"
-                className="bg-blue-900 text-white hover:bg-blue-800 font-bold py-3 px-8 rounded-full transition duration-300 text-lg"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Realizar inscrição
-              </Link>
+              <p className="text-red-600 text-lg font-semibold">
+                  As inscrições foram encerradas. Agradecemos o interesse!
+              </p>
             </div>
           </div>
         </div>
