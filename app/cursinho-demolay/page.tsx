@@ -9,7 +9,7 @@ type Link = {
 
 export default function CursinhoDeMolay() {
   const linkMap: Link[] = [{
-    year: "2022", link: "/img/ge.jpg"}, {year: "2023", link: "/img/ge.jpg"}, {year: "2024", link: "/img/2024.pdf"}]
+     year: "2024", link: "/img/2024.pdf"}]
   return (
     <main>
       {/* Hero section */}
