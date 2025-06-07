@@ -243,27 +243,7 @@ export default function PracaDeMolayPage() {
                     </h4>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h5 className="font-semibold text-blue-900 mb-3">Poder Público Municipal</h5>
-                        <ul className="space-y-2 text-gray-700">
-                          <li>
-                            • <strong>Prefeito Municipal:</strong> Dr. Afonso Macchione Neto
-                          </li>
-                          <li>
-                            • <strong>Vice-Prefeito:</strong> Eng. Paulo Roberto Stuani
-                          </li>
-                          <li>
-                            • <strong>Vereador:</strong> João Carlos Ferreira
-                          </li>
-                          <li>
-                            • <strong>Vereadora:</strong> Maria Aparecida Santos
-                          </li>
-                          <li>
-                            • <strong>Secretário de Obras:</strong> Eng. Roberto Silva
-                          </li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h5 className="font-semibold text-blue-900 mb-3">Comunidade Maçônica</h5>
+                        <h5 className="font-semibold text-blue-900 mb-3">Autoridades Maçonicas e Públicas</h5>
                         <ul className="space-y-2 text-gray-700">
                           <li>
                             • <strong>Presidente Conselho Consultivo:</strong> Daniel Volpi
@@ -282,6 +262,9 @@ export default function PracaDeMolayPage() {
                           </li>
                           <li>
                             • <strong>Consultor:</strong> Silvio Gil
+                          </li>
+                          <li>
+                            • <strong>Prefeito Municipal:</strong> Sr. Geraldo Vinholi
                           </li>
                         </ul>
                       </div>
