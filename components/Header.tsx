@@ -1,43 +1,38 @@
-'use client'
+"use client"
+
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { usePathname } from "next/navigation"
-import { Analytics } from "@vercel/analytics/react"
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  const path = usePathname()
+  const [menuAberto, setMenuAberto] = useState(false)
 
   return (
     <header className="bg-blue-900 text-white">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <Link
-            href="https://www.demolaybrasil.org.br/"
-            className="flex items-center"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          {/* Logo */}
+          <Link className="flex items-center" href="https://demolaybrasil.org.br">
             <Image
-              src="/img/brasao.png"
               alt="Brasão DeMolay"
               width={80}
               height={80}
               className="mr-2"
+              src="/img/brasao.png"
             />
           </Link>
 
+          {/* Botão do menu mobile */}
           <button
             className="md:hidden focus:outline-none"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label="Abrir menu"
+            aria-expanded={menuAberto}
+            onClick={() => setMenuAberto(!menuAberto)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="28"
+              height="28"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -52,42 +47,57 @@ export default function Header() {
             </svg>
           </button>
 
-          <div
-            className={`md:flex items-center ${isMenuOpen ? "block absolute top-20 left-0 right-0 bg-blue-900 p-4 z-50" : "hidden"} md:static`}
-          >
-            <ul className="flex flex-col md:flex-row md:space-x-4">
-              <li className="mb-2 md:mb-0">
-                <Link
-                  href="/"
-                  className={`px-3 py-2 rounded-full hover:bg-blue-800 transition duration-300 block ${path === "/" ? "bg-white text-blue-900 font-bold" : ""}`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="mb-2 md:mb-0">
-                <Link
-                  href="/cursinho-demolay"
-                  className={`px-3 py-2 rounded-full hover:bg-blue-800 transition duration-300 block ${path === "/cursinho-demolay" ? "bg-white text-blue-900 font-bold" : ""}`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Cursinho DeMolay
-                </Link>
-              </li>
-              <li className="mb-2 md:mb-0">
-                <Link
-                  href="/noticias"
-                  className={`px-3 py-2 rounded-full hover:bg-blue-800 transition duration-300 block ${path === "/noticias" ? "bg-white text-blue-900 font-bold" : ""}`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Notícias
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Menu Desktop */}
+          <ul className="hidden md:flex flex-row space-x-4">
+            <li>
+              <Link className="px-4 py-2 rounded-full hover:bg-blue-800 transition duration-300" href="/">Home</Link>
+            </li>
+            <li>
+              <Link className="px-4 py-2 rounded-full hover:bg-blue-800 transition duration-300" href="/cursinho-demolay">Cursinho DeMolay</Link>
+            </li>
+            <li>
+              <Link className="px-4 py-2 rounded-full hover:bg-blue-800 transition duration-300" href="/noticias">Notícias</Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Menu Mobile com animação */}
+        <div
+          className={`md:hidden mt-4 transition-all duration-300 overflow-hidden ${
+            menuAberto ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <ul className="flex flex-col space-y-2">
+            <li>
+              <Link
+                onClick={() => setMenuAberto(false)}
+                className="block px-4 py-2 text-white bg-blue-800 rounded-md"
+                href="/"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                onClick={() => setMenuAberto(false)}
+                className="block px-4 py-2 text-white bg-blue-800 rounded-md"
+                href="/cursinho-demolay"
+              >
+                Cursinho DeMolay
+              </Link>
+            </li>
+            <li>
+              <Link
+                onClick={() => setMenuAberto(false)}
+                className="block px-4 py-2 text-white bg-blue-800 rounded-md"
+                href="/noticias"
+              >
+                Notícias
+              </Link>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
   )
 }
-
