@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { Users, Heart, BookOpen, Calendar, MapPin } from "lucide-react"
+import { Users, Heart, BookOpen, Calendar, MapPin, Newspaper } from "lucide-react"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
 export default function HomePage() {
@@ -117,14 +117,14 @@ export default function HomePage() {
 
       {/* Atividades */}
       <section className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-3">
           <h2 className="text-3xl font-bold text-center mb-8">Nossas Atividades</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: <Users className="text-blue-600" />, title: "Projetos Sociais", desc: "Iniciativas solidárias com foco comunitário." },
               { icon: <BookOpen className="text-green-600" />, title: "Cursinho DeMolay", desc: "Apoio educacional gratuito.", link: "/cursinho-demolay", color: "green" },
+              { icon: <Newspaper className="text-blue-600" />, title: "Jornal DeMolay", desc: "Nóticias sobre o Capítulo", link: "/noticias", color: "blue" },
               { icon: <MapPin className="text-red-600" />, title: "Praça DeMolay", desc: "Marco histórico local.", link: "/praca-demolay", color: "red" },
-              { icon: <Calendar className="text-purple-600" />, title: "Eventos Fraternais", desc: "Momentos de união e confraternização." },
+              { icon: <Users className="text-blue-600" />, title: "Projetos Sociais", desc: "Iniciativas solidárias com foco comunitário." },
             ].map(({ icon, title, desc, link, color }, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
                 <div className={`w-16 h-16 bg-${color ?? "blue"}-100 mx-auto mb-4 rounded-full flex items-center justify-center`}>{icon}</div>

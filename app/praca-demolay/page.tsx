@@ -145,20 +145,59 @@ export default function PracaDeMolayPage() {
                   <p className="text-gray-700 leading-relaxed text-lg">
                     A inauguração da Praça DeMolay foi um marco histórico para o Capítulo Juventude de Catanduva,
                     representando não apenas o reconhecimento da comunidade pelos trabalhos desenvolvidos pela Ordem
-                    DeMolay na cidade, mas também a materialização de um sonho acalentado por várias gerações de
+                    DeMolay na cidade, mas também a materialização de um legado acalentado por várias gerações de
                     DeMolays catanduvenses.
                   </p>
 
-                  <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
-                    <h3 className="font-bold text-blue-900 mb-3 flex items-center">
-                      <Award className="w-5 h-5 mr-2" />O Projeto da Praça
-                    </h3>
-                    <p className="text-gray-700 leading-relaxed">
-                      O projeto da Praça DeMolay foi idealizado como um espaço público que pudesse servir tanto como
-                      área de lazer para a comunidade quanto como um símbolo permanente dos valores e princípios da
-                      Ordem DeMolay.
+                 <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                  <h3 className="font-bold text-blue-900 mb-3 flex items-center">
+                    <Award className="w-5 h-5 mr-2" />
+                    O Projeto da Praça
+                  </h3>
+                  <div className="text-gray-700 leading-relaxed space-y-4">
+                    <p>
+                      No dia <strong>06 de dezembro de 2015</strong>, foi um dia muito
+                      importante para o <strong>Capítulo Juventude de Catanduva</strong>, onde
+                      se fez jus à nossa 7ª virtude, que é o <strong>Patriotismo</strong>,
+                      tendo em vista que nosso país passava não só por uma crise política e
+                      econômica, mas também de autoestima.
+                    </p>
+                    <p>
+                      Às vésperas de seu 30° ano de fundação, os irmãos, tios e convidados
+                      tiveram a oportunidade de reverenciar esta grande pátria em nossa
+                      praça, que nos foi novamente legada após o esforço dos demais Mestres
+                      Conselheiros, com a anuência da prefeitura e colaboração dos tios e
+                      irmãos.
+                    </p>
+                    <p>
+                      No momento do hasteamento, estavam presentes o Irmão Mestre Conselheiro{" "}
+                      <strong>João Pedro Zapaterra Rinaldi</strong>, a representação maçônica,{" "}
+                      <strong>Tio Wilson Carvalho</strong>, e o representante municipal,{" "}
+                      <strong>prefeito Sr. Geraldo Vinholi</strong>.
+                    </p>
+                    <p>
+                      Foi executado o <strong>Hino da Bandeira</strong> e, em seguida, o{" "}
+                      <strong>Hino Nacional</strong>. Quando a bandeira brasileira chegou ao
+                      seu posto final, foi recebida por rojões, marcando assim aquela linda
+                      cerimônia.
+                    </p>
+                    <p>
+                      Esse ato foi resultado de uma luta que orgulhou e abrilhantou a{" "}
+                      <strong>58ª Gestão</strong>, fruto de vários esforços.
+                    </p>
+                    <p>
+                      Estavam presentes diversas autoridades, colaboradores e irmãos. Aqui
+                      registramos o apoio do nosso <strong>Tio Wilson Carvalho</strong>, que é
+                      um grande entusiasta das causas de nossa Ordem e, sempre que possível,
+                      colabora conosco.
+                    </p>
+                    <p>
+                      Que a <strong>bandeira brasileira</strong> continue esbanjando boas-vindas a
+                      todos que entram em <strong>Catanduva</strong> e que seja um símbolo para
+                      outros municípios.
                     </p>
                   </div>
+                </div>
 
                   <div className="grid md:grid-cols-2 gap-6 my-8">
                     <div className="cursor-pointer group">
@@ -189,7 +228,7 @@ export default function PracaDeMolayPage() {
               <CardHeader className="bg-blue-50">
                 <CardTitle className="flex items-center text-2xl">
                   <Users className="w-6 h-6 mr-2 text-blue-700" />
-                  Gestão 58ª - Realizadores do Sonho
+                  Gestão 58ª - Um marco histórico
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
@@ -274,11 +313,9 @@ export default function PracaDeMolayPage() {
               </CardContent>
             </Card>
 
-          
-
                   <p className="text-gray-700 leading-relaxed text-lg">
                     A Gestão 58ª será eternamente lembrada como a administração que transformou um sonho em realidade.
-                    Sob a liderança  do Mestre Conselheiro Zapaterra Rinaldi, esta gestão demonstrou que com
+                    Sob a liderança  do Mestre Conselheiro João Pedro Zapaterra Rinaldi, esta gestão demonstrou que com
                     determinação, trabalho em equipe e perseverança, é possível alcançar objetivos que parecem
                     impossíveis.
                   </p>
@@ -306,20 +343,42 @@ export default function PracaDeMolayPage() {
 
                   <p className="text-gray-700 leading-relaxed text-lg">
                     A reinauguração da Praça DeMolay foi um momento de renovação e revitalização deste importante espaço
-                    para o Capítulo Juventude de Catanduva. Após cinco anos da inauguração inicial, a praça havia
-                    sofrido com o desgaste natural do tempo e necessitava de intervenções significativas.
+                    para o Capítulo Juventude de Catanduva. Após cinco anos da inauguração inicial.
                   </p>
 
-                  <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
-                    <h3 className="font-bold text-green-900 mb-3 flex items-center">
-                      <Award className="w-5 h-5 mr-2" />O Projeto de Revitalização
-                    </h3>
-                    <p className="text-gray-700 leading-relaxed">
-                      O projeto de revitalização foi concebido não apenas como uma reforma, mas como uma oportunidade de
-                      modernizar e ampliar as funcionalidades da praça. A Gestão 69ª identificou a necessidade de criar
-                      um espaço mais acolhedor e funcional.
+                <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                  <h3 className="font-bold text-green-900 mb-3 flex items-center">
+                    <Award className="w-5 h-5 mr-2" />
+                    O Projeto de Revitalização
+                  </h3>
+                  <div className="text-gray-700 leading-relaxed space-y-4">
+                    <p>
+                      Foi realizado no dia <strong>29 de maio</strong>, em <strong>Catanduva</strong>,
+                      região noroeste, distante 390 km de São Paulo, a reinauguração da{" "}
+                      <strong>Praça DeMolay</strong>, localizada na Av. Eng. José Nelson Machado,
+                      no bairro da Vila Industrial. O evento fez parte das comemorações dos{" "}
+                      <strong>35 anos do Capítulo Juventude de Catanduva nº 44</strong>. A praça foi
+                      inaugurada pela primeira vez em <strong>6 de dezembro de 2015</strong>.
+                    </p>
+                    <p>
+                      Diversas autoridades maçônicas e paramaçônicas estiveram presentes,
+                      incluindo o maçom <strong>Wilson Ribeiro de Carvalho</strong>, membro fundador
+                      do Capítulo, o <strong>Primeiro Sargento Cleiton Giovani</strong>, chefe de
+                      instruções do Tiro de Guerra, entre outros.
+                    </p>
+                    <p>
+                      O evento obedeceu todas as medidas sanitárias contra o novo coronavírus. A
+                      praça conta com dois mastros, onde estão expostos o <strong>pavilhão nacional</strong> e
+                      a <strong>bandeira da Ordem DeMolay</strong>.
+                    </p>
+                    <p>
+                      Além disso, há também placas que homenageiam os fundadores do{" "}
+                      <strong>Capítulo Juventude de Catanduva nº 44</strong>, bem como a gestão em que a
+                      praça foi inaugurada e reinaugurada. Há também neste local placas que expõem
+                      o <strong>logo da Ordem DeMolay</strong> e o <strong>logo deste Capítulo</strong>.
                     </p>
                   </div>
+                </div>
 
                    {/* Gestão 69ª */}
             <Card id="gestao-69">
@@ -376,8 +435,7 @@ export default function PracaDeMolayPage() {
                   <p className="text-gray-700 leading-relaxed text-lg">
                     A Gestão 69ª assumiu o compromisso de honrar o legado da Gestão 58ª enquanto adaptava a Praça
                     DeMolay às necessidades contemporâneas da comunidade. Sob a liderança inspiradora do Mestre
-                    Conselheiro Rafael Costa Ferreira, esta gestão demonstrou que inovação e tradição podem caminhar
-                    juntas.
+                    Conselheiro Gustavo Silva Esparza.
                   </p>
                 </div>
               </CardContent>
@@ -393,7 +451,7 @@ export default function PracaDeMolayPage() {
                         <h5 className="font-semibold text-green-900 mb-3">Comunidade Maçônica e DeMolay</h5>
                         <ul className="space-y-2 text-gray-700">
                           <li>
-                            • <strong>Presidente Conselho Consultivo:</strong> André Luis Sgrignoli Filho
+                            • <strong>Presidente Conselho Consultivo:</strong> André Luis Sgrignoli 
                           </li>
                           <li>
                             • <strong>Consultor do Capítulo:</strong> David Carlo Yauri Caman
@@ -418,6 +476,9 @@ export default function PracaDeMolayPage() {
                           </li>
                            <li>
                             • <strong>Consultor:</strong> Gabriel Leite Braga
+                          </li>
+                          <li>
+                            • <strong>Membro Fundador:</strong> Wilson Ribeiro de Carvalho
                           </li>
                         </ul>
                       </div>
