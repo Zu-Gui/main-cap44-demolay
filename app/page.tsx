@@ -123,7 +123,7 @@ export default function HomePage() {
             {[
               { icon: <BookOpen className="text-green-600" />, title: "Cursinho DeMolay", desc: "Apoio educacional gratuito.", link: "/cursinho-demolay", color: "green" },
               { icon: <Newspaper className="text-blue-600" />, title: "Jornal DeMolay", desc: "Nóticias sobre o Capítulo", link: "/noticias", color: "blue" },
-              { icon: <MapPin className="text-red-600" />, title: "Praça DeMolay", desc: "Marco histórico local.", link: "/praca-demolay", color: "red" },
+              { icon: <MapPin className="text-red-600" />, title: "Praça DeMolay", desc: "Marco histórico local.", link: "/praca-demolay", color: "red"},
               { icon: <Users className="text-blue-600" />, title: "Projetos Sociais", desc: "Iniciativas solidárias com foco comunitário." },
             ].map(({ icon, title, desc, link, color }, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">

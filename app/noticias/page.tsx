@@ -50,7 +50,14 @@ export default async function NoticiasPage({
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">Capítulo Juventude de Catanduva - Nº44</h1>
-              <p className="mb-4 text-lg">Bem vindo ao Jornal DeMolay!</p>
+              <p className="mb-4 text-lg">
+                Bem vindo ao Jornal DeMolay!<br /> 
+                <br />
+                Com a intenção de ajudar a divulgação dos projetos de nosso capítulo, e mostrar os nossos esforços na sociedade de Catanduva, o Capítulo Juventude de Catanduva nº 44 criou o Notícias do 44, o jornal do Nosso Capítulo.<br />
+                Nós produzimos uma edição que conta com todas as atividades e divulgações do nosso Capítulo, e uma entrevista com algum irmão, tio ou tia que contribui ou contribuiu para o nosso Capítulo.<br />
+                Nossas edições são mensais, entregues em todas as lojas de Catanduva e Pindorama, postadas no Instagram do Capítulo e adicionadas no site sempre na primeira sexta-feira do mês.
+              </p>
+              <br />
               <div>
                 <Link
                   href="/"
