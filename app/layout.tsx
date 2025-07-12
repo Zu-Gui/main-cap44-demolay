@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={inter.className}>
         <Header />
-
+        <link rel="icon" type="image/x-icon" href="/img/logo.png"></link>
         <main className="min-h-screen">{children}</main>
 
         <footer className="w-full py-8 border-t bg-white">
