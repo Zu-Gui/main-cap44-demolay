@@ -57,9 +57,9 @@
     "next-auth": "5.0.0-beta.25",
     "next-themes": "^0.4.4",
     "paseto-ts": "^1.5.7",
-    "react": "^19.1.0",
+    "react": "^19.1.1",
     "react-day-picker": "8.10.1",
-    "react-dom": "^19.1.0",
+    "react-dom": "^19.1.1",
     "react-hook-form": "^7.54.1",
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.0",
@@ -74,12 +74,12 @@
     "@types/cookie-parser": "^1.4.8",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^22",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
     "postcss": "^8",
     "prisma": "^6.5.0",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5"
+    "typescript": "^5.9.2"
   },
   "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b"
 }
